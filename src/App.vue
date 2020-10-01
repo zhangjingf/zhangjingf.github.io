@@ -2,7 +2,7 @@
   <div id="app">
     <el-container>
       <el-header>愿生活对你我都能温柔以待</el-header>
-      <el-container>
+      <!-- <el-container>
         <el-aside width="200px"
           ><el-menu
             default-active="2"
@@ -35,7 +35,7 @@
           </el-menu>
         </el-aside>
         <el-main><router-view></router-view></el-main>
-      </el-container>
+      </el-container> -->
     </el-container>
   </div>
 </template>
