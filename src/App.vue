@@ -2,7 +2,7 @@
   <div id="app">
     <el-container>
       <el-header>愿生活对你我都能温柔以待</el-header>
-      <!-- <el-container>
+      <el-container>
         <el-aside width="200px"
           ><el-menu
             default-active="2"
@@ -35,7 +35,7 @@
           </el-menu>
         </el-aside>
         <el-main><router-view></router-view></el-main>
-      </el-container> -->
+      </el-container>
     </el-container>
   </div>
 </template>
@@ -84,14 +84,15 @@ export default {
   background-color: #d3dce6;
   color: #333;
   text-align: center;
-  line-height: 200px;
+  line-height: 20px;
+  height: calc(100vh - 60px);
 }
 
 .el-main {
   background-color: #e9eef3;
   color: #333;
   text-align: center;
-  line-height: 160px;
+  line-height: 20px;
 }
 
 body > .el-container {
