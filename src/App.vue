@@ -1,7 +1,10 @@
 <template>
   <div id="app">
     <el-container>
-      <el-header>愿生活对你我都能温柔以待</el-header>
+      <el-header>
+        <div>{{ timeStr }}</div>
+        <div>愿生活对你我都能温柔以待</div></el-header
+      >
       <el-container>
         <el-aside width="200px"
           ><el-menu
@@ -46,16 +49,20 @@ export default {
   data() {
     return {
       menuOptions: [],
+      timeStr: '',
     };
   },
   created() {
     this.menuOptions = menuJson;
+    setInterval(() => {
+      this.timeStr = `${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString()}`;
+    }, 500);
   },
   methods: {
     navChange(index, indexPath) {
       if (window.location.pathname === indexPath[indexPath.length - 1]) return;
       this.$router.push(indexPath[indexPath.length - 1]);
-    }
+    },
   },
 };
 </script>
@@ -74,8 +81,10 @@ export default {
 }
 .el-header,
 .el-footer {
-  background-color: #b3c0d1;
-  color: #333;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(36, 41, 46);
+  color: #ffffff;
   text-align: center;
   line-height: 60px;
 }
@@ -89,7 +98,7 @@ export default {
 }
 
 .el-main {
-  background-color: #e9eef3;
+  background-color: #ffffff;
   color: #333;
   text-align: center;
   line-height: 20px;
