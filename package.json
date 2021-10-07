@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "element-ui": "^2.13.2",
+    "element-ui": "2.15.6",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
     "vuex": "^3.4.0"
@@ -45,7 +45,8 @@
     },
     "rules": {
       "no-console": "off",
-      "comma-dangle": 0
+      "comma-dangle": 0,
+      "indent": 2
     },
     "overrides": [
       {

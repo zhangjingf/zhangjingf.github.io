@@ -4,8 +4,22 @@ const menuJson = [
     path: '/'
   },
   {
-    name: '技术随笔',
-    path: '/tech'
+    name: '前端',
+    path: '/tech',
+    children: [
+      {
+        name: 'JS',
+        path: '/tech',
+      },
+      {
+        name: 'CSS',
+        path: '/tech',
+      },
+      {
+        name: 'HTML',
+        path: '/tech',
+      }
+    ]
   },
   {
     name: '日常',

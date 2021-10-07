@@ -1,5 +1,5 @@
 <template>
-  <div class="life">空的</div>
+  <div class="life"><el-empty></el-empty></div>
 </template>
 
 <script>
