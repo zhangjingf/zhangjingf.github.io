@@ -38,7 +38,7 @@
     </div>
 </template>
 <script>
-import menuJson from './config/menu';
+import menuJson from '../../config/menu';
 
 export default {
   data() {

@@ -2,7 +2,7 @@
   <div class="home">
     <el-row>
       <el-col :span="3">
-        <img src="../assets/img/IMG_20171002_144429.jpg" alt="" />
+        <img src="../../../assets/img/IMG_20171002_144429.jpg" alt="" />
       </el-col>
       <el-col :span="20">
         <p>从明天起，做一个幸福的人</p>
