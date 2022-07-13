@@ -31,7 +31,12 @@
                 </el-row>
             </el-form>
         </div>
-        <div class="content"></div>
+        <div class="content">
+            <div v-for="(item, index) in locationList" :key="index">
+                <div>{{ item.location }}{{ item.time }}</div>
+                <div>{{ item.context }}</div>
+            </div>
+        </div>
     </div>
 </template>
 <script>
@@ -39,45 +44,58 @@ import axios from 'axios';
 import { expressList } from '../../utils/constants';
 
 export default {
-  data() {
-    return {
-      form: {},
-      expressList,
-      rules: {
-        number: [{ required: true, message: '请输入', trigger: 'blur' }],
-        code: [{ required: true, message: '请选择', trigger: 'blur' }]
-      }
-    };
-  },
-  mounted() {
-    console.log(this.$http);
-  },
-  methods: {
-    fetchExpressLog() {
-      this.$refs.form.validate((val) => {
-        if (val) {
-          axios
-            .get(
-              `http://www.kuaidi100.com/query?type=${this.form.code}&postid=${this.form.number}`
-            )
-            .then((res) => {
-              console.log(res);
+    data() {
+        return {
+            form: {},
+            expressList,
+            rules: {
+                number: [{ required: true, message: '请输入', trigger: 'blur' }],
+                code: [{ required: true, message: '请选择', trigger: 'blur' }]
+            },
+            locationList: []
+        };
+    },
+    mounted() {
+        console.log(this.$http);
+    },
+    methods: {
+        fetchExpressLog() {
+            this.$refs.form.validate(val => {
+                if (val) {
+                    axios
+                        .get(
+                            `//www.kuaidi100.com/query?type=${this.form.code}&postid=${this.form.number}`
+                        )
+                        .then(res => {
+                            if (res.data) {
+                                this.locationList = res.data;
+                            }
+                        });
+                }
             });
         }
-      });
     }
-  }
 };
 </script>
+<style lang="scss">
+body {
+    height: 100%;
+}
+</style>
 <style lang="scss" scoped>
 .express {
-    padding: 1rem;
-    height: calc(100% - 2rem);
+    height: 100%;
     display: flex;
     flex-direction: column;
+    & > div {
+        padding: 1rem;
+    }
     .content {
         height: 100%;
         overflow: scroll;
+        > div {
+            padding-bottom: 1rem;
+        }
     }
     .el-select {
         width: 100%;
