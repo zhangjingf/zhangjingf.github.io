@@ -10,23 +10,23 @@ Vue.use(ElementUI);
 viewport.init(1);
 let tid = null;
 window.addEventListener(
-    'resize',
-    function() {
-        clearTimeout(tid);
-        tid = setTimeout(viewport.init(1), 300);
-    },
-    false
+  'resize',
+  () => {
+    clearTimeout(tid);
+    tid = setTimeout(viewport.init(1), 300);
+  },
+  false
 );
 window.addEventListener(
-    'pageshow',
-    function(e) {
-        if (e.persisted) {
-            clearTimeout(tid);
-            tid = setTimeout(viewport.init(1), 300);
-        }
-    },
-    false
+  'pageshow',
+  (e) => {
+    if (e.persisted) {
+      clearTimeout(tid);
+      tid = setTimeout(viewport.init(1), 300);
+    }
+  },
+  false
 );
 new Vue({
-    render: h => h(App)
+  render: (h) => h(App)
 }).$mount('#app');

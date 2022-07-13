@@ -40,30 +40,30 @@
     </div>
 </template>
 <script>
-import axios from 'axios';
 import { expressList } from '../../utils/constants';
 
 export default {
-    data() {
-        return {
-            form: {},
-            expressList,
-            rules: {
-                number: [{ required: true, message: '请输入', trigger: 'blur' }],
-                code: [{ required: true, message: '请选择', trigger: 'blur' }]
-            },
-            locationList: []
-        };
-    },
-    methods: {
-        fetchExpressLog() {
-            this.$refs.form.validate(val => {
-                if (val) {
-                    location.href = `//www.kuaidi100.com/query?type=${this.form.code}&postid=${this.form.number}`;
-                }
-            });
+  data() {
+    return {
+      form: {},
+      expressList,
+      rules: {
+        number: [{ required: true, message: '请输入', trigger: 'blur' }],
+        code: [{ required: true, message: '请选择', trigger: 'blur' }]
+      },
+      locationList: []
+    };
+  },
+  methods: {
+    fetchExpressLog() {
+      this.$refs.form.validate((val) => {
+        if (val) {
+          // eslint-disable-next-line no-restricted-globals
+          location.href = `//www.kuaidi100.com/query?type=${this.form.code}&postid=${this.form.number}`;
         }
+      });
     }
+  }
 };
 </script>
 <style lang="scss">
