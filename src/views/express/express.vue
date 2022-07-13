@@ -55,22 +55,11 @@ export default {
             locationList: []
         };
     },
-    mounted() {
-        console.log(this.$http);
-    },
     methods: {
         fetchExpressLog() {
             this.$refs.form.validate(val => {
                 if (val) {
-                    axios
-                        .get(
-                            `//www.kuaidi100.com/query?type=${this.form.code}&postid=${this.form.number}`
-                        )
-                        .then(res => {
-                            if (res.data) {
-                                this.locationList = res.data;
-                            }
-                        });
+                    location.href = `//www.kuaidi100.com/query?type=${this.form.code}&postid=${this.form.number}`;
                 }
             });
         }
