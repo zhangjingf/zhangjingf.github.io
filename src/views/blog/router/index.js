@@ -11,14 +11,14 @@ const routes = [
     component: Home,
   },
   {
-    path: '/life',
-    name: 'life',
-    component: () => import(/* webpackChunkName: "about" */ '../pages/life.vue'),
+    path: '/photo',
+    name: 'photo',
+    component: () => import(/* webpackChunkName: "about" */ '../pages/photo.vue'),
   },
   {
-    path: '/tech',
-    name: 'tech',
-    component: () => import(/* webpackChunkName: "about" */ '../pages/tech.vue'),
+    path: '/about',
+    name: 'about',
+    component: () => import(/* webpackChunkName: "about" */ '../pages/about.vue'),
   },
 ];
 

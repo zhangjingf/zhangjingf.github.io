@@ -1,11 +1,11 @@
 <template>
-  <div class="home">空的</div>
+  <div class="life"><el-empty></el-empty></div>
 </template>
 
 <script>
 // @ is an alias to /src
 
 export default {
-  name: 'tech',
+  name: 'photo',
 };
 </script>

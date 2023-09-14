@@ -1,29 +1,15 @@
 const menuJson = [
   {
-    name: '首页',
+    name: '文章',
     path: '/'
   },
   {
-    name: '前端',
-    path: '/tech',
-    children: [
-      {
-        name: 'JS',
-        path: '/tech',
-      },
-      {
-        name: 'CSS',
-        path: '/tech',
-      },
-      {
-        name: 'HTML',
-        path: '/tech',
-      }
-    ]
+    name: '照片',
+    path: '/photo',
   },
   {
-    name: '日常',
-    path: '/life'
+    name: 'about',
+    path: '/about'
   }
 ];
 
