@@ -13,6 +13,11 @@ module.exports = {
       entry: 'src/views/express/main.js',
       template: 'public/index.html',
       filename: 'express.html'
-    }
+    },
+    linru: {
+      entry: 'src/views/linru/main.js',
+      template: 'public/index.html',
+      filename: 'linru.html'
+    },
   }
 };
