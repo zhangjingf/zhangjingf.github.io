@@ -2,6 +2,7 @@ module.exports = {
   lintOnSave: true,
   outputDir: 'dist',
   assetsDir: 'assets',
+  productionSourceMap: false,
   pages: {
     blog: {
       entry: 'src/views/blog/main.js',
